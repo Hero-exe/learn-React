@@ -1,9 +1,28 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { JSXBasics } from './components/JSXBasics'
 
 function App() {
+  const [showJSXBasics, setShowJSXBasics] = useState(false)
   const [count, setCount] = useState(0)
+
+  // JSX学習モードとホーム画面を切り替え
+  if (showJSXBasics) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 p-4">
+        <div className="mb-4">
+          <button
+            onClick={() => setShowJSXBasics(false)}
+            className="bg-white text-purple-600 px-4 py-2 rounded-lg shadow hover:bg-gray-50 transition-colors"
+          >
+            ← ホームに戻る
+          </button>
+        </div>
+        <JSXBasics />
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 flex items-center justify-center">
@@ -20,25 +39,29 @@ function App() {
 
         {/* タイトル */}
         <h1 className="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-8">
-          Vite + React
+          React Learning
         </h1>
 
-        {/* カウンターカード */}
-        <div className="bg-gray-50 rounded-lg p-6 mb-6">
+        {/* 学習メニュー */}
+        <div className="space-y-4 mb-6">
           <button
-            onClick={() => setCount((count) => count + 1)}
+            onClick={() => setShowJSXBasics(true)}
             className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
           >
-            カウント: {count}
+            📝 JSXの基本文法を学ぶ
           </button>
-          <p className="text-gray-600 text-center mt-4">
-            <code className="bg-gray-200 px-2 py-1 rounded text-sm">src/App.tsx</code> を編集してHMRをテストしよう！
-          </p>
+          
+          <button
+            onClick={() => setCount((count) => count + 1)}
+            className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+          >
+            🎯 カウンター: {count}
+          </button>
         </div>
 
         {/* 説明文 */}
         <p className="text-gray-500 text-center text-sm">
-          ViteとReactのロゴをクリックして、もっと学んでみよう！✨
+          学習したいトピックを選んでね！楽しく学んでいこう♪✨
         </p>
       </div>
     </div>
