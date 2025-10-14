@@ -3,10 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { JSXBasics } from './components/JSXBasics'
 import { ComponentBasics } from './components/ComponentBasics'
+import { PropsBasics } from './components/PropsBasics'
 
 function App() {
   const [showJSXBasics, setShowJSXBasics] = useState(false)
   const [showComponentBasics, setShowComponentBasics] = useState(false)
+  const [showPropsBasics, setShowPropsBasics] = useState(false)
   const [count, setCount] = useState(0)
 
   // JSX学習モードとホーム画面を切り替え
@@ -43,6 +45,23 @@ function App() {
     )
   }
 
+  // Props学習モードとホーム画面を切り替え
+  if (showPropsBasics) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 p-4">
+        <div className="mb-4">
+          <button
+            onClick={() => setShowPropsBasics(false)}
+            className="bg-white text-purple-600 px-4 py-2 rounded-lg shadow hover:bg-gray-50 transition-colors"
+          >
+            ← ホームに戻る
+          </button>
+        </div>
+        <PropsBasics />
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 flex items-center justify-center">
       <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4">
@@ -75,6 +94,13 @@ function App() {
             className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
           >
             🏗️ コンポーネントの作成を学ぶ
+          </button>
+
+          <button
+            onClick={() => setShowPropsBasics(true)}
+            className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+          >
+            🎁 Props（プロパティ）の受け渡しを学ぶ
           </button>
           
           <button
