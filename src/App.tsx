@@ -157,56 +157,115 @@ function App() {
         </h1>
 
         {/* 学習メニュー */}
-        <div className="space-y-4 mb-6">
-          <button
-            onClick={() => setShowJSXBasics(true)}
-            className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-          >
-            📝 JSXの基本文法を学ぶ
-          </button>
+        <div className="space-y-6 mb-6">
+          {/* 🌱 基礎編 */}
+          <div>
+            <h2 className="text-lg font-bold text-gray-700 mb-3 text-center">🌱 基礎編</h2>
+            <div className="space-y-3">
+              <button
+                onClick={() => setShowJSXBasics(true)}
+                className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                📝 JSXの基本文法
+              </button>
 
-          <button
-            onClick={() => setShowComponentBasics(true)}
-            className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-          >
-            🏗️ コンポーネントの作成を学ぶ
-          </button>
+              <button
+                onClick={() => setShowComponentBasics(true)}
+                className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                🏗️ コンポーネントの作成
+              </button>
 
-          <button
-            onClick={() => setShowPropsBasics(true)}
-            className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-          >
-            🎁 Props（プロパティ）の受け渡しを学ぶ
-          </button>
+              <button
+                onClick={() => setShowPropsBasics(true)}
+                className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                🎁 Props（プロパティ）の受け渡し
+              </button>
 
-          <button
-            onClick={() => setShowStateBasics(true)}
-            className="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-          >
-            📊 State（状態）の管理を学ぶ
-          </button>
+              <button
+                onClick={() => setShowStateBasics(true)}
+                className="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                📊 State（状態）の管理
+              </button>
 
-          <button
-            onClick={() => setShowEventHandling(true)}
-            className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-          >
-            🎪 イベントハンドリングを学ぶ
-          </button>
+              <button
+                onClick={() => setShowEventHandling(true)}
+                className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                🎪 イベントハンドリング
+              </button>
 
-          <button
-            onClick={() => setShowConditionalRendering(true)}
-            className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-          >
-            🔀 条件分岐レンダリングを学ぶ
-          </button>
+              <button
+                onClick={() => setShowConditionalRendering(true)}
+                className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                🔀 条件分岐レンダリング
+              </button>
+            </div>
+          </div>
 
-          <button
-            onClick={() => setShowUseStateAdvanced(true)}
-            className="w-full bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-          >
-            🔧 useStateフック中級編を学ぶ
-          </button>
+          {/* 🌿 中級編 */}
+          <div>
+            <h2 className="text-lg font-bold text-gray-700 mb-3 text-center">🌿 中級編</h2>
+            <div className="space-y-3">
+              <button
+                onClick={() => setShowUseStateAdvanced(true)}
+                className="w-full bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                🔧 useStateフック
+              </button>
 
+              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
+                🎯 useEffectフック（準備中）
+              </div>
+
+              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
+                🔗 useContextフック（準備中）
+              </div>
+
+              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
+                🪝 カスタムフック（準備中）
+              </div>
+            </div>
+          </div>
+
+          {/* 🌳 応用編 */}
+          <div>
+            <h2 className="text-lg font-bold text-gray-700 mb-3 text-center">🌳 応用編</h2>
+            <div className="space-y-3">
+              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
+                ⚙️ useReducerフック（準備中）
+              </div>
+
+              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
+                🚀 React Router（準備中）
+              </div>
+
+              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
+                🌐 API連携（準備中）
+              </div>
+            </div>
+          </div>
+
+          {/* 🚀 実践編 */}
+          <div>
+            <h2 className="text-lg font-bold text-gray-700 mb-3 text-center">🚀 実践編</h2>
+            <div className="space-y-3">
+              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
+                🏗️ プロジェクト構築（準備中）
+              </div>
+
+              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
+                🧪 テスト（準備中）
+              </div>
+
+              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
+                🚀 デプロイ（準備中）
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* 説明文 */}
