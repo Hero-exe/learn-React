@@ -2,9 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { JSXBasics } from './components/JSXBasics'
+import { ComponentBasics } from './components/ComponentBasics'
 
 function App() {
   const [showJSXBasics, setShowJSXBasics] = useState(false)
+  const [showComponentBasics, setShowComponentBasics] = useState(false)
   const [count, setCount] = useState(0)
 
   // JSX学習モードとホーム画面を切り替え
@@ -20,6 +22,23 @@ function App() {
           </button>
         </div>
         <JSXBasics />
+      </div>
+    )
+  }
+
+  // コンポーネント学習モードとホーム画面を切り替え
+  if (showComponentBasics) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 p-4">
+        <div className="mb-4">
+          <button
+            onClick={() => setShowComponentBasics(false)}
+            className="bg-white text-purple-600 px-4 py-2 rounded-lg shadow hover:bg-gray-50 transition-colors"
+          >
+            ← ホームに戻る
+          </button>
+        </div>
+        <ComponentBasics />
       </div>
     )
   }
@@ -50,10 +69,17 @@ function App() {
           >
             📝 JSXの基本文法を学ぶ
           </button>
+
+          <button
+            onClick={() => setShowComponentBasics(true)}
+            className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+          >
+            🏗️ コンポーネントの作成を学ぶ
+          </button>
           
           <button
             onClick={() => setCount((count) => count + 1)}
-            className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+            className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
           >
             🎯 カウンター: {count}
           </button>
