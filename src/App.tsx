@@ -4,11 +4,13 @@ import viteLogo from '/vite.svg'
 import { JSXBasics } from './components/JSXBasics'
 import { ComponentBasics } from './components/ComponentBasics'
 import { PropsBasics } from './components/PropsBasics'
+import { StateBasics } from './components/StateBasics'
 
 function App() {
   const [showJSXBasics, setShowJSXBasics] = useState(false)
   const [showComponentBasics, setShowComponentBasics] = useState(false)
   const [showPropsBasics, setShowPropsBasics] = useState(false)
+  const [showStateBasics, setShowStateBasics] = useState(false)
   const [count, setCount] = useState(0)
 
   // JSX学習モードとホーム画面を切り替え
@@ -62,6 +64,23 @@ function App() {
     )
   }
 
+  // State学習モードとホーム画面を切り替え
+  if (showStateBasics) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 p-4">
+        <div className="mb-4">
+          <button
+            onClick={() => setShowStateBasics(false)}
+            className="bg-white text-purple-600 px-4 py-2 rounded-lg shadow hover:bg-gray-50 transition-colors"
+          >
+            ← ホームに戻る
+          </button>
+        </div>
+        <StateBasics />
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 flex items-center justify-center">
       <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4">
@@ -102,10 +121,17 @@ function App() {
           >
             🎁 Props（プロパティ）の受け渡しを学ぶ
           </button>
+
+          <button
+            onClick={() => setShowStateBasics(true)}
+            className="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+          >
+            📊 State（状態）の管理を学ぶ
+          </button>
           
           <button
             onClick={() => setCount((count) => count + 1)}
-            className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+            className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
           >
             🎯 カウンター: {count}
           </button>
