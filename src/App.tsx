@@ -11,7 +11,6 @@ function App() {
   const [showComponentBasics, setShowComponentBasics] = useState(false)
   const [showPropsBasics, setShowPropsBasics] = useState(false)
   const [showStateBasics, setShowStateBasics] = useState(false)
-  const [count, setCount] = useState(0)
 
   // JSX学習モードとホーム画面を切り替え
   if (showJSXBasics) {
@@ -127,13 +126,6 @@ function App() {
             className="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
           >
             📊 State（状態）の管理を学ぶ
-          </button>
-          
-          <button
-            onClick={() => setCount((count) => count + 1)}
-            className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-          >
-            🎯 カウンター: {count}
           </button>
         </div>
 
