@@ -7,6 +7,7 @@ import { PropsBasics } from './components/PropsBasics'
 import { StateBasics } from './components/StateBasics'
 import { EventHandling } from './components/EventHandling'
 import { ConditionalRendering } from './components/ConditionalRendering'
+import { UseStateAdvanced } from './components/UseStateAdvanced'
 
 function App() {
   const [showJSXBasics, setShowJSXBasics] = useState(false)
@@ -15,6 +16,7 @@ function App() {
   const [showStateBasics, setShowStateBasics] = useState(false)
   const [showEventHandling, setShowEventHandling] = useState(false)
   const [showConditionalRendering, setShowConditionalRendering] = useState(false)
+  const [showUseStateAdvanced, setShowUseStateAdvanced] = useState(false)
 
 
   // JSX学習モードとホーム画面を切り替え
@@ -119,6 +121,23 @@ function App() {
     )
   }
 
+  // useStateフック中級編学習モードとホーム画面を切り替え
+  if (showUseStateAdvanced) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 p-4">
+        <div className="mb-4">
+          <button
+            onClick={() => setShowUseStateAdvanced(false)}
+            className="bg-white text-purple-600 px-4 py-2 rounded-lg shadow hover:bg-gray-50 transition-colors"
+          >
+            ← ホームに戻る
+          </button>
+        </div>
+        <UseStateAdvanced />
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 flex items-center justify-center">
       <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4">
@@ -179,6 +198,13 @@ function App() {
             className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
           >
             🔀 条件分岐レンダリングを学ぶ
+          </button>
+
+          <button
+            onClick={() => setShowUseStateAdvanced(true)}
+            className="w-full bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+          >
+            🔧 useStateフック中級編を学ぶ
           </button>
 
         </div>
