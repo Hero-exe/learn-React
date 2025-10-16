@@ -54,7 +54,7 @@ npm run dev
 
 ### 🚀 実践編
 - [ ] コンポーネント設計パターン
-- [ ] テスト（Jest/React Testing Library）
+- [x] テスト（Jest/React Testing Library）
 - [ ] Storybook（コンポーネントカタログ）
 - [ ] PWA（Progressive Web App）
 - [ ] デプロイ（Vercel/Netlify）

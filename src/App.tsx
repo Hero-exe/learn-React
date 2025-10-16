@@ -8,6 +8,7 @@ import { StateBasics } from './components/StateBasics'
 import { EventHandling } from './components/EventHandling'
 import { ConditionalRendering } from './components/ConditionalRendering'
 import { UseStateAdvanced } from './components/UseStateAdvanced'
+import { TestingBasics } from './components/TestingBasics'
 
 function App() {
   const [showJSXBasics, setShowJSXBasics] = useState(false)
@@ -17,6 +18,7 @@ function App() {
   const [showEventHandling, setShowEventHandling] = useState(false)
   const [showConditionalRendering, setShowConditionalRendering] = useState(false)
   const [showUseStateAdvanced, setShowUseStateAdvanced] = useState(false)
+  const [showTestingBasics, setShowTestingBasics] = useState(false)
 
 
   // JSX学習モードとホーム画面を切り替え
@@ -134,6 +136,23 @@ function App() {
           </button>
         </div>
         <UseStateAdvanced />
+      </div>
+    )
+  }
+
+  // テスト学習モードとホーム画面を切り替え
+  if (showTestingBasics) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 p-4">
+        <div className="mb-4">
+          <button
+            onClick={() => setShowTestingBasics(false)}
+            className="bg-white text-purple-600 px-4 py-2 rounded-lg shadow hover:bg-gray-50 transition-colors"
+          >
+            ← ホームに戻る
+          </button>
+        </div>
+        <TestingBasics />
       </div>
     )
   }
@@ -257,9 +276,12 @@ function App() {
                 🏗️ プロジェクト構築（準備中）
               </div>
 
-              <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
-                🧪 テスト（準備中）
-              </div>
+              <button
+                onClick={() => setShowTestingBasics(true)}
+                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                🧪 テスト（Jest/React Testing Library）
+              </button>
 
               <div className="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white font-semibold py-3 px-6 rounded-lg opacity-75 cursor-not-allowed">
                 🚀 デプロイ（準備中）
