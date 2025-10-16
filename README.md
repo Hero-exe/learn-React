@@ -10,6 +10,9 @@ React + TypeScript + Vite + Tailwind CSSを使った学習プロジェクトで�
 - **Vite** - 高速な開発サーバー
 - **Tailwind CSS** - ユーティリティファーストなCSS
 - **ESLint** - コード品質の向上
+- **Jest** - JavaScriptテストフレームワーク
+- **React Testing Library** - Reactコンポーネントテスト
+- **Babel** - JavaScriptトランスパイラ
 
 ## 🚀 Quick Start
 
@@ -35,11 +38,11 @@ npm run dev
 - [ ] リストレンダリング
 
 ### 🌿 中級編
-- [x] useStateフック
+- [x] useStateフック（高度な使い方）
 - [ ] useEffectフック
 - [ ] useContextフック
 - [ ] カスタムフック
-- [ ] フォームの制御
+- [x] フォームの制御・バリデーション
 - [ ] ライフサイクル
 - [ ] エラーハンドリング
 
@@ -55,6 +58,9 @@ npm run dev
 ### 🚀 実践編
 - [ ] コンポーネント設計パターン
 - [x] テスト（Jest/React Testing Library）
+  - [x] コンポーネントテスト
+  - [x] ユーザーインタラクションテスト
+  - [x] フォームバリデーションテスト
 - [ ] Storybook（コンポーネントカタログ）
 - [ ] PWA（Progressive Web App）
 - [ ] デプロイ（Vercel/Netlify）
@@ -64,13 +70,19 @@ npm run dev
 
 ```
 src/
-├── components/     # 再利用可能なコンポーネント
-├── hooks/         # カスタムフック
-├── pages/         # ページコンポーネント
-├── utils/         # ユーティリティ関数
-├── types/         # TypeScript型定義
-├── styles/        # グローバルスタイル
-└── assets/        # 画像やアイコン
+├── components/           # 学習用コンポーネント
+│   ├── __tests__/       # テストファイル
+│   ├── JSXBasics.tsx    # JSX基礎
+│   ├── PropsBasics.tsx  # Props基礎
+│   ├── StateBasics.tsx  # State基礎
+│   ├── EventHandling.tsx     # イベント処理
+│   ├── ConditionalRendering.tsx  # 条件分岐
+│   ├── UseStateAdvanced.tsx     # useState応用
+│   └── TestingBasics.tsx        # テスト基礎
+├── hooks/               # カスタムフック
+├── utils/               # ユーティリティ関数
+├── types/               # TypeScript型定義
+└── assets/              # 画像やアイコン
 ```
 
 ## 🎯 学習の進め方
@@ -89,6 +101,29 @@ src/
 - **Tailwind**: クラス名でスタイリングが簡単
 - **コンポーネント分割**: 再利用性を意識
 
+## 🧪 テスト環境
+
+このプロジェクトでは**Jest**と**React Testing Library**を使って、コンポーネントのテストを書けるよ！
+
+### テストの実行
+```bash
+# 全テスト実行
+npm run test
+
+# 特定のテストファイルのみ実行
+npm run test -- Counter.test.tsx
+
+# テスト名で絞り込み
+npm run test -- --testNamePattern="正常に送信される"
+```
+
+### 現在のテスト状況
+- ✅ **Counter コンポーネント**: ボタンクリック、増減機能
+- ✅ **UserList コンポーネント**: リスト表示、フィルタリング
+- ✅ **FormComponent**: フォーム入力、バリデーション、送信
+
+**📊 テスト結果**: 40/40 テスト成功 🎉
+
 ## 🔧 Available Scripts
 
 ```bash
@@ -96,6 +131,7 @@ npm run dev      # 開発サーバー起動
 npm run build    # 本番用ビルド
 npm run preview  # ビルド後のプレビュー
 npm run lint     # ESLintでコードチェック
+npm run test     # テスト実行
 ```
 
 ## 📖 参考リンク
