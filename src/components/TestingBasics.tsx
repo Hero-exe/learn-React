@@ -64,7 +64,8 @@ export const FormComponent: React.FC<FormComponentProps> = ({ onSubmit }) => {
       newErrors.name = '名前は必須です';
     }
 
-    if (!formData.email.includes('@')) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email)) {
       newErrors.email = '有効なメールアドレスを入力してください';
     }
 
